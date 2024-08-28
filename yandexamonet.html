@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courier Income Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>Калькулятор</h1>
+        <div class="location">
+            <label for="city">Город:</label>
+            <select id="city">
+                <option value="moscow">Москва</option>
+                <!-- Add more options if needed -->
+            </select>
+        </div>
+
+        <div class="transport">
+            <label for="transport">Транспорт:</label>
+            <select id="transport">
+                <option value="car">На машине</option>
+                <!-- Add more options if needed -->
+            </select>
+        </div>
+
+        <div class="days">
+            <p>Дни недели:</p>
+            <input type="checkbox" id="mon" name="days" value="mon">
+            <label for="mon">Пн</label>
+            <input type="checkbox" id="tue" name="days" value="tue">
+            <label for="tue">Вт</label>
+            <input type="checkbox" id="wed" name="days" value="wed">
+            <label for="wed">Ср</label>
+            <input type="checkbox" id="thu" name="days" value="thu">
+            <label for="thu">Чт</label>
+            <input type="checkbox" id="fri" name="days" value="fri">
+            <label for="fri">Пт</label>
+            <input type="checkbox" id="sat" name="days" value="sat">
+            <label for="sat">Сб</label>
+        </div>
+
+        <div class="hours">
+            <p>Количество часов в день:</p>
+            <input type="range" id="hours" min="2" max="12" value="8" oninput="updateHours(this.value)">
+            <span id="hoursValue">8</span> часов
+        </div>
+
+        <div class="conditions">
+            <input type="checkbox" id="thermobag">
+            <label for="thermobag">Термосумка</label>
+            <input type="checkbox" id="bulkOrders">
+            <label for="bulkOrders">Заказы подряд</label>
+        </div>
+
+        <div class="income">
+            <h2>Средний доход</h2>
+            <p>За неделю: <span id="weeklyIncome">27,176 ₽</span></p>
+            <p>За месяц: <span id="monthlyIncome">120,351 ₽</span></p>
+        </div>
+
+        <button id="becomeCourier">Стать курьером</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
